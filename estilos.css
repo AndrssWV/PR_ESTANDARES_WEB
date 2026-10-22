@@ -28,3 +28,31 @@ header img {
   max-width: 100%;
   height: auto;
 }
+
+nav, .layout, footer {
+  max-width: 60rem;
+  margin: 1rem auto;
+}
+
+nav {
+  border-block: 1px solid var(--color-borde);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  list-style: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-borde);
+}
