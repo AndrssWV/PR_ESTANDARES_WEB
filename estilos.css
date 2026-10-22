@@ -130,3 +130,24 @@ footer {
   padding-top: 1rem;
   border-top: 1px solid var(--color-borde);
 }
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 100%;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  nav, .pedido {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+  }
+}
