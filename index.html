@@ -19,5 +19,82 @@
     </ul>
   </nav>
 
+  <div>
+    <main>
+      <section>
+        <h2>Bienvenidos</h2>
+      </section>
+
+      <section>
+        <h2>Menú</h2>
+        <table>
+          <caption>Productos y precios</caption>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Americano</th>
+              <td>Café negro</td>
+              <td>$1,50</td>
+            </tr>
+            <tr>
+              <th>Capuchino</th>
+              <td>Café con leche espumada</td>
+              <td>$2,25</td>
+            </tr>
+            <tr>
+              <th>Chocolate</th>
+              <td>Bebida caliente de cacao</td>
+              <td>$2,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <section>
+    <h2>Pedido</h2>
+    <form>
+      <fieldset>
+        <label >Nombre:</label>
+        <input type="text">
+
+        <label >Correo electrónico:</label>
+        <input type="email">
+
+        <label >Teléfono:</label>
+        <input type="tel">
+
+        <label >Hora de retiro:</label>
+        <input type="time">
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number">
+      </fieldset>
+
+      <fieldset>
+        <p>Seleccionar:</p>
+        <label><input type="checkbox" value="Chocolate"> Chocolate</label>
+        <label><input type="checkbox" value="Americano"> Americano</label>
+        <label><input type="checkbox" value="Capuchino"> Capuchino</label>
+
+        <label>Intensidad del café (1 a 5):</label>
+        <input type="range">
+      </fieldset>
+
+      <button>Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Cafetería Esquina</p>
+  </footer>
+
 </body>
 </html>
