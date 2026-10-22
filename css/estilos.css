@@ -51,6 +51,12 @@ a {
   color: var(--color-principal);
 }
 
+a:focus,
+input:focus,
+button:focus {
+    outline: 2px solid blue;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
