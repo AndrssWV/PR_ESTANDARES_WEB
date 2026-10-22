@@ -1,6 +1,8 @@
 :root {
   --color-fondo: #fffaf3;
   --color-texto: #2b211b;
+  --color-principal: #56331f;
+  --color-borde: #b9a796;
 }
 
 * {
@@ -29,7 +31,7 @@ header img {
   height: auto;
 }
 
-nav, .layout, footer {
+nav, .layout, .pedido, footer {
   max-width: 60rem;
   margin: 1rem auto;
 }
@@ -43,13 +45,76 @@ nav ul {
   flex-wrap: wrap;
   gap: 1.5rem;
   padding: 0.5rem;
-  list-style: none;
+}
+
+a {
+  color: var(--color-principal);
 }
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
+}
+
+main, aside, .pedido {
+  min-width: 0;
+}
+
+section, aside, fieldset {
+  margin-bottom: 1rem;
+}
+
+aside, .pedido, fieldset {
+  padding: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.4rem;
+}
+
+h1, h2, legend {
+  color: var(--color-principal);
+}
+
+table {
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid var(--color-borde);
+  text-align: left;
+}
+
+thead {
+  background: var(--color-principal);
+  color: white;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.datos input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.opcion {
+  display: block;
+  margin: 0.4rem 0;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background: var(--color-principal);
+  color: white;
 }
 
 footer {

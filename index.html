@@ -8,8 +8,8 @@
 </head>
 <body>
   <header>
-    <img src="img/cafe.svg" alt="Taza de café" width="70" height="70">
-    <h1>Cafetería del Parque</h1>
+    <img src="img/cafe.svg" alt="Logo cafeteria" width="70" height="70">
+    <h1>Cafetería Esquina</h1>
   </header>
 
   <nav aria-label="Navegación principal">
@@ -24,6 +24,7 @@
     <main>
       <section>
         <h2>Bienvenidos</h2>
+        <p>Disfruta de café, bebidas calientes y algo rico para acompañar.</p>
       </section>
 
       <section id="menu">
@@ -32,24 +33,24 @@
           <caption>Productos y precios</caption>
           <thead>
             <tr>
-              <th>Producto</th>
-              <th>Descripción</th>
-              <th>Precio</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Precio</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>Americano</th>
+              <th scope="row">Americano</th>
               <td>Café negro</td>
               <td>$1,50</td>
             </tr>
             <tr>
-              <th>Capuchino</th>
+              <th scope="row">Capuchino</th>
               <td>Café con leche espumada</td>
               <td>$2,25</td>
             </tr>
             <tr>
-              <th>Chocolate</th>
+              <th scope="row">Chocolate</th>
               <td>Bebida caliente de cacao</td>
               <td>$2,00</td>
             </tr>
@@ -57,45 +58,50 @@
         </table>
       </section>
     </main>
+
+    <aside>
+      <h2>Información</h2>
+      <p>Horario: lunes a sábado, de 08:00 a 19:00.</p>
+    </aside>
   </div>
 
-  <section id="pedido">
-    <h2>Pedido</h2>
+  <section class="pedido" id="pedido">
+    <h2>Realiza tu pedido</h2>
     <form>
-      <fieldset>
-        <label >Nombre:</label>
-        <input type="text">
+      <fieldset class="datos">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" required minlength="2">
 
-        <label >Correo electrónico:</label>
-        <input type="email">
+        <label for="correo">Correo electrónico:</label>
+        <input id="correo" name="correo" type="email" required>
 
-        <label >Teléfono:</label>
-        <input type="tel">
+        <label for="telefono">Teléfono:</label>
+        <input id="telefono" name="telefono" type="tel"
+               pattern="[0-9 +()-]{7,20}" title="Use entre 7 y 20 caracteres: números, espacios, +, paréntesis o guiones.">
 
-        <label >Hora de retiro:</label>
-        <input type="time">
+        <label for="hora">Hora de retiro:</label>
+        <input id="hora" name="hora" type="time" min="08:00" max="18:45" required>
 
-        <label for="cantidad">Cantidad:</label>
-        <input type="number">
+        <label for="cantidad">Cantidad de personas (1 a 12):</label>
+        <input id="cantidad" name="cantidad" type="number" min="1" max="12" value="1" required>
       </fieldset>
 
       <fieldset>
-        <p>Seleccionar:</p>
-        <label><input type="checkbox" value="Chocolate"> Chocolate</label>
-        <label><input type="checkbox" value="Americano"> Americano</label>
-        <label><input type="checkbox" value="Capuchino"> Capuchino</label>
+        <p>Selecciona los productos:</p>
+        <label class="opcion"><input type="checkbox" name="producto" value="Americano"> Americano</label>
+        <label class="opcion"><input type="checkbox" name="producto" value="Capuchino"> Capuchino</label>
+        <label class="opcion"><input type="checkbox" name="producto" value="Chocolate"> Chocolate</label>
 
-        <label>Intensidad del café (1 a 5):</label>
-        <input type="range">
+        <label for="intensidad">Intensidad del café (1 a 5):</label>
+        <input id="intensidad" name="intensidad" type="range" min="1" max="5" step="1" value="3">
       </fieldset>
 
-      <button>Enviar</button>
+      <button type="submit">Enviar pedido</button>
     </form>
   </section>
 
   <footer>
     <p>Cafetería del Parque</p>
   </footer>
-
 </body>
 </html>
