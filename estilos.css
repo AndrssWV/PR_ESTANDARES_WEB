@@ -80,6 +80,11 @@ table {
   background: white;
 }
 
+caption {
+  padding: 0.5rem;
+  text-align: left;
+}
+
 th, td {
   padding: 0.5rem;
   border: 1px solid var(--color-borde);
@@ -94,6 +99,10 @@ thead {
 form {
   display: grid;
   gap: 1rem;
+}
+
+fieldset {
+  min-width: 0;
 }
 
 .datos input {
