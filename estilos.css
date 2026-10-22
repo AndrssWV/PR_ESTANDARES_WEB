@@ -1,0 +1,30 @@
+:root {
+  --color-fondo: #fffaf3;
+  --color-texto: #2b211b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 60rem;
+  margin: auto;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+}

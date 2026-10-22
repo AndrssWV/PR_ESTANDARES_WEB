@@ -3,29 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cafetería Esquina</title>
+  <title>Cafetería del Parque</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <header>
-    <h1>Cafetería Esquina</h1>
+    <img src="img/cafe.svg" alt="Taza de café" width="70" height="70">
+    <h1>Cafetería del Parque</h1>
   </header>
 
-  <nav>
+ <nav aria-label="Navegación principal">
     <ul>
-      <li><a>Inicio</a></li>
-      <li><a>Menú</a></li>
-      <li><a>Pedido</a></li>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#pedido">Pedido</a></li>
     </ul>
   </nav>
 
-  <div>
+  <div id="inicio">
     <main>
       <section>
         <h2>Bienvenidos</h2>
       </section>
 
-      <section>
+      <section id="menu">
         <h2>Menú</h2>
         <table>
           <caption>Productos y precios</caption>
@@ -58,7 +59,7 @@
     </main>
   </div>
 
-  <section>
+  <section id="pedido">
     <h2>Pedido</h2>
     <form>
       <fieldset>
@@ -93,7 +94,7 @@
   </section>
 
   <footer>
-    <p>Cafetería Esquina</p>
+    <p>Cafetería del Parque</p>
   </footer>
 
 </body>
