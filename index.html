@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -9,7 +10,7 @@
 <body>
   <header>
     <img src="img/cafe.svg" alt="Logo cafeteria" width="70" height="70">
-    <h1>Cafetería Esquina</h1>
+    <h1>Cafetería del Parque</h1>
   </header>
 
   <nav aria-label="Navegación principal">
@@ -57,6 +58,80 @@
           </tbody>
         </table>
       </section>
+
+      <section class="pedido" id="pedido">
+        <h2>Realiza tu pedido</h2>
+
+        <form>
+          <fieldset class="datos">
+            <legend>Datos del cliente</legend>
+
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" name="nombre" type="text"
+                   required minlength="2">
+
+            <label for="correo">Correo electrónico:</label>
+            <input id="correo" name="correo" type="email" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input id="telefono" name="telefono" type="tel"
+                   pattern="[0-9 +()-]{7,20}"
+                   title="Use entre 7 y 20 caracteres: números, espacios, +, paréntesis o guiones."
+                   aria-describedby="telefono-ayuda">
+            <small id="telefono-ayuda">
+              Usa entre 7 y 20 caracteres: números, espacios, +,
+              paréntesis o guiones.
+            </small>
+
+            <label for="hora">Hora de retiro:</label>
+            <input id="hora" name="hora" type="time"
+                   min="08:00" max="18:45" required>
+
+            <label for="cantidad">Cantidad de personas (1 a 12):</label>
+            <input id="cantidad" name="cantidad" type="number"
+                   min="1" max="12" value="1" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Productos</legend>
+            <p>Selecciona los productos que deseas:</p>
+
+            <label class="opcion">
+              <input type="checkbox" name="producto" value="Americano">
+              Americano
+            </label>
+
+            <label class="opcion">
+              <input type="checkbox" name="producto" value="Capuchino">
+              Capuchino
+            </label>
+
+            <label class="opcion">
+              <input type="checkbox" name="producto" value="Chocolate">
+              Chocolate
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferencias</legend>
+
+            <label for="intensidad">Intensidad del café:</label>
+            <p id="intensidad-ayuda">
+              1 = suave; 5 = muy intenso.
+            </p>
+
+            <input id="intensidad" name="intensidad"
+                   type="range" min="1" max="5" step="1" value="3"
+                   aria-describedby="intensidad-ayuda intensidad-valor">
+
+            <p>Valor seleccionado:
+              <output id="intensidad-valor" for="intensidad">3</output>
+            </p>
+          </fieldset>
+
+          <button type="submit">Enviar pedido</button>
+        </form>
+      </section>
     </main>
 
     <aside>
@@ -65,47 +140,17 @@
     </aside>
   </div>
 
-  <section class="pedido" id="pedido">
-    <h2>Realiza tu pedido</h2>
-    <form>
-      <fieldset class="datos">
-        <legend>Datos del cliente</legend>
-
-        <label for="nombre">Nombre:</label>
-        <input id="nombre" name="nombre" type="text" required minlength="2">
-
-        <label for="correo">Correo electrónico:</label>
-        <input id="correo" name="correo" type="email" required>
-
-        <label for="telefono">Teléfono:</label>
-        <input id="telefono" name="telefono" type="tel"
-               pattern="[0-9 +()-]{7,20}" title="Use entre 7 y 20 caracteres: números, espacios, +, paréntesis o guiones.">
-
-        <label for="hora">Hora de retiro:</label>
-        <input id="hora" name="hora" type="time" min="08:00" max="18:45" required>
-
-        <label for="cantidad">Cantidad de personas (1 a 12):</label>
-        <input id="cantidad" name="cantidad" type="number" min="1" max="12" value="1" required>
-      </fieldset>
-
-      <fieldset>
-         <legend>Preferencias</legend>
-
-        <p>Selecciona los productos:</p>
-        <label class="opcion"><input type="checkbox" name="producto" value="Americano"> Americano</label>
-        <label class="opcion"><input type="checkbox" name="producto" value="Capuchino"> Capuchino</label>
-        <label class="opcion"><input type="checkbox" name="producto" value="Chocolate"> Chocolate</label>
-
-        <label for="intensidad">Intensidad del café (1 a 5):</label>
-        <input id="intensidad" name="intensidad" type="range" min="1" max="5" step="1" value="3">
-      </fieldset>
-
-      <button type="submit">Enviar pedido</button>
-    </form>
-  </section>
-
   <footer>
-    <p>Cafetería del Parque</p>
+    <p>Cafetería del Parque </p>
   </footer>
+
+  <script>
+    const intensidad = document.getElementById('intensidad');
+    const valorIntensidad = document.getElementById('intensidad-valor');
+
+    intensidad.addEventListener('input', function () {
+      valorIntensidad.value = intensidad.value;
+    });
+  </script>
 </body>
 </html>
